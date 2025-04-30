@@ -1,0 +1,19 @@
+import java.util.Arrays;
+
+public class App {
+    public static void main(String[] args) throws Exception {
+        int[] numbers = {42, 7, 19, 73, 5, 88, 34};
+
+        for (int i = 0; i < numbers.length - 1; i++) {
+            for (int j = 0; j < numbers.length - 1 - i; j++) {
+                if (numbers[j] > numbers[j + 1]) {
+                    int temp = numbers[j];
+                    numbers[j] = numbers[j + 1];
+                    numbers[j + 1] = temp;
+                }
+            }
+        }
+
+        System.out.println("Sorted numbers: " + Arrays.toString(numbers));
+    }
+}
