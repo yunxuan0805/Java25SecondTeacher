@@ -15,8 +15,13 @@ public class Bank {
         return this.account;
     }
 
-    public void setAccount(String account) {
-        this.account = account;
+    public void setAccount(String inputAccount, String newAccount) {
+        if(inputAccount != this.account) {
+            System.out.println("您的帳號輸入錯誤,無法繼續執行此更改");
+        } else {
+            this.account = newAccount;
+        }
+        
     }
 
     // 想像情境: 回傳餘額
@@ -24,12 +29,28 @@ public class Bank {
         return this.balance1;
     }
 
-    // 想像情境: 存錢
-    public void setBalance1(int balance1) {
-        if(balance1 > 0) {
-            this.balance1 =  this.balance1 + balance1;
+    // 想像情境: 存錢(deposit)/提款(withdraw)
+    public void setBalance1(String account, String action, int balance1) {
+        if(account != this.account) {
+            System.out.println("您的帳號輸入錯誤,無法繼續執行此交易");
         } else {
-            System.out.println("存款金額需大於0");
+            // 存錢
+            if(action == "deposit") {
+                if(balance1 > 0) {
+                    this.balance1 =  this.balance1 + balance1;
+                } else {
+                    System.out.println("存進來的金額需大於0");
+                }
+            }
+
+            // 提款
+            if(action == "withdraw") {
+                if(this.balance1 >= balance1) {
+                    this.balance1 =  this.balance1 - balance1;
+                } else {
+                    System.out.println("您的餘額不足");
+                }
+            }
         }
     }
 }
