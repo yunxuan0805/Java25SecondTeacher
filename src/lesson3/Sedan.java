@@ -8,6 +8,7 @@ public class Sedan extends Car{
          * 不寫super時機: 多載的建構子 && 建構子沒帶參數
          */
         super(name, maxSpeed);
+        // super();
     }
 
     public void back() {

@@ -1,6 +1,6 @@
 package lesson3;
 
-public class Car {
+public class Car {;
     private String name;
     private int maxSpeed;
 
@@ -8,6 +8,7 @@ public class Car {
         this.setName(name);
         this.setMaxSpeed(maxSpeed);
     }
+
 
     public void getMaxSpeed() {
         System.out.println(this.name + ",最高速度: " + this.maxSpeed);
@@ -32,5 +33,9 @@ public class Car {
      */
     public String getName() {
         return this.name;
+    }
+
+    public void wiper() {
+        System.out.println(this.name + "統一增加的新功能: 雨刷");
     }
 }
